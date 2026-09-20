@@ -1,2 +1,35 @@
-<h1>My Name is {{ fName }}</h1>
-<h1>My Last Name is  {{ lName }}</h1>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Assignment2</title>
+</head>
+<body>
+<h1>THIS IS THE ASSIGNMENT</h1>
+  @for (assignment2 of assignment2List; track assignment2.id){
+    <div class = "assignment-card">
+      <h3> {{ assignment2.name }} </h3>
+      <p> ID Number: {{ assignment2.id }}
+      <p> Location: {{ assignment2.city}}</p>
+      <p> Age: {{ assignment2.age}}</p>
+      <p> Do They Have A House: {{ assignment2.howManyHouse}}</p>
+      <p> What Do You Consider Your Friend: {{ assignment2.friendAge ? 'Young' : 'Old'}}</p>
+    </div>
+
+    @if (assignment2.howManyHouse) {
+      <p class = "optional">
+        <strong>Optional:</strong> {{ assignment2.howManyHouse  }}
+
+      </p>
+
+    }
+} @empty {
+    <p>This is currently empty at the moment</p>
+  }
+
+
+</body>
+</html>
