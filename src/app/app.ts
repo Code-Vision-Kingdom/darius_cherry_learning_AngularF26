@@ -11,9 +11,13 @@ import { Assignment2 } from './shared/models/assignment2'; // imports the inform
 export class App {
   title = 'Assignment 2 Instructions';
 
-  assignment2List: Assignment2[] = [ // Fills in the information that was set on the Assignment2.ts folder
-    { id: 1, name: 'Mark', city: 'Windsor', age: 18, friendAge: true, howManyHouse: "one" },
-    { id: 2, name: 'James', city: 'Toronto', age: 19, friendAge: false,},
-    { id: 3, name: 'Charles', city: 'Ottawa', age: 20, friendAge: true, howManyHouse: 1},
+  assignment2List: Assignment2[] = [
+    // Fills in the information that was set on the Assignment2.ts folder
+    { id: 1, name: 'Mark', city: 'Windsor', age: 18, friendAge: 1, howManyHouse: false},
+    { id: 2, name: 'James', city: 'Toronto', age: 19, friendAge: 'one', howManyHouse: false },
+    { id: 3, name: 'Charles', city: 'Ottawa', age: 20, friendAge: 2, howManyHouse: "Yes" },
+    { id: 4, name: 'Michael', city: 'Waterloo', age: 21, friendAge: 'two', howManyHouse: "Yes" },
+    { id: 5, name: 'Jackson', city: 'Brampton', age: 22, friendAge: 3, howManyHouse: "Yes" },
+    { id: 6, name: 'Kaleb', city: 'Chatham', age: 23, friendAge: 'three', howManyHouse: false },
   ];
 }
