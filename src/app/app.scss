@@ -1,14 +1,14 @@
-$space: 24px;
+$space: 24px; // nickname which can be used all through the scss page its basically a number that is assigned to $space
 
 h1{
-  text-align: center;
+  text-align: center; //Centers the text to the middle of the page
 }
 
 .row {
   display: grid;
-  gap: $space;
+  gap: $space; //creates a gap with $space amount which would be 24px
   margin-bottom: $space;
-  justify-content: center;
+  justify-content: center; //Takes the content and centers it to the page
 }
 
 .assignment-card {
@@ -30,5 +30,12 @@ h1{
     strong {
       color: #0f172a;
     }
+  }
+}
+
+@media (max-width: 768px){
+  .row{
+    grid-template-columns: 1fr; //makes it when on a mobile device it should make it a single column
+    gap: 12px;
   }
 }
