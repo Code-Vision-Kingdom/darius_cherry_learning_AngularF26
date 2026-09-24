@@ -1,26 +1,15 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Assignment2</title>
-</head>
-<body>
-<h1>THIS IS THE ASSIGNMENT</h1>
-
+<h1>WEAPON LIST</h1>
 <div class="row">
-  @for (assignment2 of assignment2List; track assignment2.id){
+  @for (weapon of weaponList; track weapon.id){
     <div class="col3">
     <div class = "assignment-card">
-      <h3> {{ assignment2.name }} </h3>
-      <p> ID Number: {{ assignment2.id }}
-      <p> <strong>Location:</strong> {{ assignment2.city}}</p>
-      <p> <strong>Age:</strong> {{ assignment2.age}}</p>
-      <p> <strong>What Do You Consider Your Friend:</strong> {{ assignment2.friendAge ? 'Young' : 'Old'}}</p>
-    @if (assignment2.howManyHouse) {
-      <p> <strong>Do They Have A House:</strong> {{ assignment2.howManyHouse}}</p>
+      <h3> {{ weapon.name }} </h3>
+      <p> ID Number: {{ weapon.id }}
+      <p> <strong>Damage:</strong> {{ weapon.damage}}</p>
+      <p> <strong>Rarity:</strong> {{ weapon.rarity}}</p>
+      <p> <strong>Class Of Item:</strong> {{ weapon.class }}</p>
+    @if (weapon.realItem) {
+      <p> <strong>Real Item:</strong> {{ weapon.realItem}}</p>
     }
     </div>
     </div>
@@ -28,5 +17,4 @@
     <p>This is currently empty at the moment</p>
   }
 </div>
-</body>
-</html>
+

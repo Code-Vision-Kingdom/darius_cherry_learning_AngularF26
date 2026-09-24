@@ -18,6 +18,11 @@ h1{
   padding: 20px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 
+  &:hover{
+    border-width: 3px; // thickens the border
+    border-color: #2563eb; //Matches the color to my h3
+  }
+
 
   h3 {
     margin-top: 0;
@@ -32,6 +37,7 @@ h1{
     }
   }
 }
+
 
 @media (max-width: 768px){
   .row{
