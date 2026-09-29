@@ -1,9 +1,10 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Weapon } from './shared/models/assignment2'; // imports the information from the Assignment2 folder
+import { Weapon } from './shared/models/assignment2';
+import {WeaponList} from './Terraria-list/weapon-list'; // imports the information from the Assignment2 folder
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, WeaponList],
   selector: 'app-root',
   styleUrl: './app.scss', //Links to the app.scss folder containing the styles that I have set
   templateUrl: './app.html', // Connects to the app.html folder that I have set
@@ -13,20 +14,14 @@ export class App {
 
   weaponList: Weapon[] = [
     // Fills in the information that was set on the Assignment2.ts folder
-    { id: 1,
-      name: 'Ice Blade',
-      damage: 100,
-      rarity: 'Rare',
-      class: 'Melee',
-      realItem: true
-    },
+    { id: 1, name: 'Ice Blade', damage: 100, rarity: 'Rare', class: 'Melee', realItem: true },
     {
       id: 2,
       name: 'Muramasa',
       damage: 150,
       rarity: 'Epic',
       class: 'Melee',
-      realItem: false
+      realItem: false,
     },
     {
       id: 3,
@@ -42,7 +37,7 @@ export class App {
       damage: 250,
       rarity: 'Rare',
       class: 'Ranged',
-      realItem: false
+      realItem: false,
     },
     {
       id: 5,
@@ -50,15 +45,15 @@ export class App {
       damage: 300,
       rarity: 'Epic',
       class: 'Ranged',
-      realItem: true },
+      realItem: true,
+    },
     {
       id: 6,
       name: 'Nights Edge',
       damage: 200,
       rarity: 'Legendary',
       class: 'Ranged',
-      realItem: false
+      realItem: false,
     },
-
   ];
 }

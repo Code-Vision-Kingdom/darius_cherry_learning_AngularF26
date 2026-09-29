@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { WeaponList } from './weapon-list';
+import { TerrariaListItem } from './terraria-list-item';
 
-describe('WeaponList', () => {
-  let component: WeaponList;
-  let fixture: ComponentFixture<WeaponList>;
+describe('TerrariaListItem', () => {
+  let component: TerrariaListItem;
+  let fixture: ComponentFixture<TerrariaListItem>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WeaponList],
+      imports: [TerrariaListItem],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(WeaponList);
+    fixture = TestBed.createComponent(TerrariaListItem);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
