@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ShadewoodListItem } from './shadewood-list-item';
+import { ZenithListItem } from './zenith-list-item';
 
-describe('ShadewoodListItem', () => {
-  let component: ShadewoodListItem;
-  let fixture: ComponentFixture<ShadewoodListItem>;
+describe('ZenithListItem', () => {
+  let component: ZenithListItem;
+  let fixture: ComponentFixture<ZenithListItem>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ShadewoodListItem],
+      imports: [ZenithListItem],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ShadewoodListItem);
+    fixture = TestBed.createComponent(ZenithListItem);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

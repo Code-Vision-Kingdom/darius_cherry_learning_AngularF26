@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ArmorList } from './armor-list';
+import { WeaponList } from './weapon-list';
 
-describe('ArmorList', () => {
-  let component: ArmorList;
-  let fixture: ComponentFixture<ArmorList>;
+describe('WeaponList', () => {
+  let component: WeaponList;
+  let fixture: ComponentFixture<WeaponList>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ArmorList],
+      imports: [WeaponList],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ArmorList);
+    fixture = TestBed.createComponent(WeaponList);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
