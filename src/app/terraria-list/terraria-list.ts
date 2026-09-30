@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { TerrariaListItem, WeaponEvent } from '../terraria-list-item/terraria-list-item';
 import { Weapon } from '../shared/models/assignment2';
 

@@ -1,10 +1,10 @@
 <h1>Terraria Items</h1>
 <div class="terraria-list">
-  <h3>@for (item of weaponList; track item.id){
+  @for (item of weaponList; track item.id){
     <app-terraria-list-item [item]="item" (opened)="onWeaponOpened($event)" ></app-terraria-list-item>
   } @empty {
     <p>There is no Terraria weapons to show</p>
   }
-  </h3>
+
   </div>
 

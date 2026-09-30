@@ -18,6 +18,8 @@ export class TerrariaListItem {
   opened = output<WeaponEvent>();
 
   toggle(): void {
+    this.expanded = !this.expanded;
+
     this.opened.emit({
       id: this.item().id,
       action: 'opened',
