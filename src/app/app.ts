@@ -10,5 +10,4 @@ import {TerrariaList} from './terraria-list/terraria-list'; // imports the infor
   templateUrl: './app.html', // Connects to the app.html folder that I have set
 })
 export class App {
-  terraria = input.required<TerrariaList>()
 }

@@ -1,22 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { TerrariaListItem, WeaponEvent } from '../terraria-list-item/terraria-list-item';
 import { Weapon } from '../shared/models/assignment2';
 
 @Component({
-  imports: [],
+  imports: [TerrariaListItem],
   selector: 'app-terraria-list',
-  styleUrl: './terraria-list.css',
+  styleUrl: './terraria-list.scss',
   templateUrl: './terraria-list.html',
 })
 export class TerrariaList {
-
   weaponList: Weapon[] = [
     // Fills in the information that was set on the Assignment2.ts folder
-    { id: 1,
-      name: 'Ice Blade',
-      damage: 100,
-      rarity: 'Rare',
-      class: 'Melee',
-      realItem: true },
+    { id: 1, name: 'Ice Blade', damage: 100, rarity: 'Rare', class: 'Melee', realItem: true },
     {
       id: 2,
       name: 'Muramasa',
@@ -51,12 +46,16 @@ export class TerrariaList {
     },
     {
       id: 6,
-      name: 'Nights Edge',
+      name: 'Zenith',
       damage: 200,
       rarity: 'Legendary',
       class: 'Ranged',
       realItem: false,
     },
   ];
+  onWeaponOpened(event: WeaponEvent): void {
+    console.log(event);
+  }
 }
+
 

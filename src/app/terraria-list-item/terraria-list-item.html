@@ -1,1 +1,39 @@
-<p>terraria-list-item works!</p>
+
+<div class =  "item-borders">
+<h3 (click) = "toggle()"> {{item().name}}</h3>
+
+  @if (expanded){
+    <p>Damage: {{item().damage}}</p>
+    <p>Class: {{item().class}}</p>
+  }
+  @switch (item().rarity){
+    @case ('Rare'){
+      <p>Rare</p>
+    }
+    @case ('Epic'){
+      <p>Epic</p>
+    }
+    @case ('Legendary'){
+      <p>Legendary</p>
+    }
+    @default {
+      <p>This is an Unknown Rarity</p>
+    }
+  }
+
+  @if (item().realItem) {
+      <p>Real Item</p>
+  } @else {
+    <p class="not a real item"> This is not a real item</p>
+  }
+
+
+
+
+
+
+
+
+</div>
+
+
