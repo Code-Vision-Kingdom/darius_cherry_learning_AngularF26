@@ -10,6 +10,7 @@
   }
 
   <h2> Melee Weapons</h2>
+  <p> Total Melee Weapons: {{ meleeWeaponsCount() }}</p>
 
   @for (items of meleeWeapons(); track items.id){
     <p>{{ items.name }}</p>

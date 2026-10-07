@@ -51,7 +51,13 @@ export class WeaponService {
   addWeapon(newWeapon: Weapon) {
     this.items.update((list) => [...list, newWeapon]);
   }
+  removeWeapon(id: number) {
+    this.items.update(list => list.filter(item => item.id !== id))
+  }
   readonly meleeWeapons = computed(() => this.items().filter((weapon) => weapon.class === 'Melee'));
+
+  readonly meleeWeaponsCount = computed(() =>
+  this.meleeWeapons().length)
 
   constructor() {
     effect(() => {
