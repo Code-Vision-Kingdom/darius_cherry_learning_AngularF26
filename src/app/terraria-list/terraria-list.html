@@ -1,9 +1,18 @@
 <h1>Terraria Items</h1>
 <div class="terraria-list">
   @for (item of weaponList(); track item.id){
-    <app-terraria-list-item [item]="item" (opened)="onWeaponOpened($event)" ></app-terraria-list-item>
+    <app-terraria-list-item
+      [item]="item"
+      (opened)="onWeaponOpened($event)" >
+    </app-terraria-list-item>
   } @empty {
     <p>There is no Terraria weapons to show</p>
+  }
+
+  <h2> Melee Weapons</h2>
+
+  @for (items of meleeWeapons(); track items.id){
+    <p>{{ items.name }}</p>
   }
 
   </div>

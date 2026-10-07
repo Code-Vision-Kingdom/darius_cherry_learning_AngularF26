@@ -1,16 +1,10 @@
-import { Service, signal } from '@angular/core';
+import { Service, signal, computed, effect } from '@angular/core';
 import { Weapon} from '../shared/models/assignment2';
 
 @Service()
 export class WeaponService {
-
   private items = signal<Weapon[]>([
-    { id: 1,
-      name: 'Ice Blade',
-      damage: 100,
-      rarity: 'Rare',
-      class: 'Melee',
-      realItem: true },
+    { id: 1, name: 'Ice Blade', damage: 100, rarity: 'Rare', class: 'Melee', realItem: true },
     {
       id: 2,
       name: 'Muramasa',
@@ -54,4 +48,15 @@ export class WeaponService {
   ]);
 
   readonly weapons = this.items.asReadonly();
+  addWeapon(newWeapon: Weapon) {
+    this.items.update((list) => [...list, newWeapon]);
+  }
+  readonly meleeWeapons = computed(() => this.items().filter((weapon) => weapon.class === 'Melee'));
+
+  constructor() {
+    effect(() => {
+      console.log('Weapon count:', this.items().length);
+    });
+  }
+
 }
