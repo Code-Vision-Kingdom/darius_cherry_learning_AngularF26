@@ -11,7 +11,7 @@ import { WeaponService} from '../services/weapon';
 })
 export class TerrariaList {
   private weaponService = inject(WeaponService);
-  weaponList = this.weaponService.weapons;
+  weaponList = this.weaponService.defaultWeapons;
   meleeWeapons = this.weaponService.meleeWeapons;
   meleeWeaponsCount = this.weaponService.meleeWeaponsCount;
 

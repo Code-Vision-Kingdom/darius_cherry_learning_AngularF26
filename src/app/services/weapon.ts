@@ -1,5 +1,6 @@
-import { Service, signal, computed, effect } from '@angular/core';
+import { Service, signal, computed, effect, inject } from '@angular/core';
 import { Weapon} from '../shared/models/assignment2';
+import { WEAPON_CONFIG } from '../config/weapon.config';
 
 @Service()
 export class WeaponService {
@@ -62,9 +63,25 @@ export class WeaponService {
   readonly meleeWeaponsCount = computed(() => this.meleeWeapons().length);
   readonly rangedWeaponsCount = computed(() => this.rangedWeapons().length);
 
+  readonly defaultWeapons = computed(() => {
+    const category = this.config.defaultType.toLowerCase();
+
+    if(category === 'melee'){
+      return this.meleeWeapons();
+    }
+
+    if (category === 'ranged'){
+      return this.rangedWeapons();
+    }
+
+    return this.weapons();
+  })
+
   constructor() {
     effect(() => {
       console.log('Weapon count:', this.items().length);
     });
   }
+
+  private config = inject(WEAPON_CONFIG);
 }
