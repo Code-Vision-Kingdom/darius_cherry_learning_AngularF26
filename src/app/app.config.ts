@@ -2,6 +2,10 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { WEAPON_CONFIG } from './config/weapon.config';
+import { MockWeaponService } from './services/mock-weapon.service';
+import { WeaponService } from './services/weapon';
+
+
 
 export const appConfig: ApplicationConfig = {
   providers: [provideBrowserGlobalErrorListeners(), provideRouter(routes),
@@ -9,7 +13,11 @@ export const appConfig: ApplicationConfig = {
       provide: WEAPON_CONFIG,
       useValue: {
         apiBaseUrl: 'https://placeholder.example.com/api',
-        defaultType: 'ranged',
-      }
+        defaultType: 'all',
+      },
+    },
+    {
+      provide: WeaponService,
+      useClass: MockWeaponService
     }],
 };
