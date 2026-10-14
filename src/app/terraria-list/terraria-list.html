@@ -14,7 +14,21 @@
 
   @for (items of meleeWeapons(); track items.id){
     <p>{{ items.name }}</p>
+  } @empty {
+    <p>There is no Melee Weapons to show here</p>
   }
 
-  </div>
+  <h2> Ranged Weapons</h2>
+  <p> Total Ranged Weapons: {{ rangedWeaponsCount() }}</p>
+
+  @for (items of rangedWeapons(); track items.id){
+    <p>{{ items.name }}</p>
+  } @empty {
+    <p>There is no Ranged Weapons to show here</p>
+  }
+
+
+
+
+</div>
 

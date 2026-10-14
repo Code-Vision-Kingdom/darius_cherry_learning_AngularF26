@@ -52,17 +52,19 @@ export class WeaponService {
     this.items.update((list) => [...list, newWeapon]);
   }
   removeWeapon(id: number) {
-    this.items.update(list => list.filter(item => item.id !== id))
+    this.items.update((list) => list.filter((item) => item.id !== id));
   }
   readonly meleeWeapons = computed(() => this.items().filter((weapon) => weapon.class === 'Melee'));
+  readonly rangedWeapons = computed(() =>
+    this.items().filter((weapon) => weapon.class === 'Ranged'),
+  );
 
-  readonly meleeWeaponsCount = computed(() =>
-  this.meleeWeapons().length)
+  readonly meleeWeaponsCount = computed(() => this.meleeWeapons().length);
+  readonly rangedWeaponsCount = computed(() => this.rangedWeapons().length);
 
   constructor() {
     effect(() => {
       console.log('Weapon count:', this.items().length);
     });
   }
-
 }

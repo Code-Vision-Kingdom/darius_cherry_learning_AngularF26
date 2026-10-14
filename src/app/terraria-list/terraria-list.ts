@@ -13,9 +13,13 @@ export class TerrariaList {
   private weaponService = inject(WeaponService);
   weaponList = this.weaponService.weapons;
   meleeWeapons = this.weaponService.meleeWeapons;
-  meleeWeaponsCount = this.weaponService.meleeWeaponsCount
+  meleeWeaponsCount = this.weaponService.meleeWeaponsCount;
+
+  rangedWeapons = this.weaponService.rangedWeapons;
+  rangedWeaponsCount = this.weaponService.rangedWeaponsCount;
+
   onWeaponOpened(event: WeaponEvent): void {
-    this.weaponService.removeWeapon(event.id)
+    this.weaponService.removeWeapon(event.id);
   }
 }
 
