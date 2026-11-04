@@ -11,6 +11,10 @@
     <p>Name must be at least 3 characters.</p>
   }
 
+  @if (form.controls.name.touched && form.controls.name.hasError('blank')) {
+    <p>Name cannot be only spaces</p>
+  }
+
   <label> Damage
   <input type="number" formControlName="damage" />
   </label>
@@ -38,6 +42,10 @@
     <label>
       <input type="checkbox" formControlName="realItem" /> Real Item
     </label>
+
+    @if (form.hasError('rarityDamage') && (form.controls.damage.touched || form.controls.rarity.touched)) {
+      <p>Epic and Legendary weapons need at least 100 damage.</p>
+    }
 
     <button type="submit" [disabled]="form.invalid">
       {{ isEdit() ? 'Save Changes' : 'Add Weapon' }}

@@ -3,6 +3,7 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { WeaponService} from '../services/weapon';
 import { Weapon } from '../shared/models/assignment2';
+import { notBlank, rarityNeedsDamage} from '../shared/validators';
 
 @Component({
   imports: [ReactiveFormsModule, RouterLink],
@@ -24,7 +25,8 @@ export class WeaponForm {
     rarity: ['Rare', Validators.required],
     class: ['Melee'],
     realItem: [true],
-  });
+  },
+    {validators: rarityNeedsDamage });
 
   constructor() {
     effect(() => {
