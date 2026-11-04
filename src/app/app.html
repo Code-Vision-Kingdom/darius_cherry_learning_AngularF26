@@ -1,1 +1,7 @@
+<nav>
+  <button (click)="guard.toggle()">
+    {{ guard.guardEnabled() ? 'Editing: Locked (click to unlock)' : 'Editing: Unlocked (click to lock)' }}
+  </button>
+</nav>
+
 <router-outlet />

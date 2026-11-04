@@ -1,7 +1,8 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, inject, input, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Weapon } from './shared/models/assignment2';
-import {TerrariaList} from './terraria-list/terraria-list'; // imports the information from the Assignment2 folder
+import {TerrariaList} from './terraria-list/terraria-list';
+import {GuardState} from './services/guard-state'; // imports the information from the Assignment2 folder
 
 @Component({
   imports: [RouterOutlet, TerrariaList],
@@ -10,4 +11,5 @@ import {TerrariaList} from './terraria-list/terraria-list'; // imports the infor
   templateUrl: './app.html', // Connects to the app.html folder that I have set
 })
 export class App {
+  guard = inject(GuardState);
 }
