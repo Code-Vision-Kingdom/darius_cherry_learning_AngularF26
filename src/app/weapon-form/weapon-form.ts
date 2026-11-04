@@ -1,6 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, computed, effect, inject, input } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { WeaponService} from '../services/weapon';
 import { Weapon } from '../shared/models/assignment2';
 
@@ -13,6 +13,10 @@ import { Weapon } from '../shared/models/assignment2';
 export class WeaponForm {
   private fb = inject(FormBuilder);
   private service = inject(WeaponService);
+  private router = inject(Router);
+
+  id = input<string>();
+  isEdit = computed(() => !!this.id());
 
   form = this.fb.group({
     name: ['New Weapon', [Validators.required, Validators.minLength(3)]],
@@ -22,6 +26,38 @@ export class WeaponForm {
     realItem: [true],
   });
 
+  constructor() {
+    effect(() => {
+      const id = this.id();
+      if (id) {
+        const weapon = this.service.getWeaponById(Number(id));
+        if (weapon) {
+          this.form.patchValue({
+            name: weapon.name,
+            damage: weapon.damage,
+            rarity: weapon.rarity,
+            class: weapon.class,
+            realItem: weapon.realItem,
+          });
+        }
+      }
+    })
+  }
+  ngOnInit(): void {
+    const id = this.id();
+    if (id){
+      const weapon = this.service.getWeaponById(Number(id));
+      if (weapon) {
+        this.form.patchValue({
+          name: weapon.name,
+          damage: weapon.damage,
+          rarity: weapon.rarity,
+          class: weapon.class,
+          realItem: weapon.realItem,
+        });
+      }
+    }
+  }
   onSubmit(): void {
     if (this.form.invalid) return;
 

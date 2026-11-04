@@ -1,1 +1,49 @@
-<p>weapon-form works!</p>
+<h2> {{ isEdit() ? 'Edit Weapon' : 'Add Weapon' }}</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <label>Name
+    <input formControlName="name" />
+  </label>
+  @if (form.controls.name.touched && form.controls.name.hasError('minlength')) {
+    <p>Name must be at least 3 characters.</p>
+  }
+  @if (form.controls.name.touched && form.controls.name.hasError('minlength')) {
+    <p>Name must be at least 3 characters.</p>
+  }
+
+  <label> Damage
+  <input type="number" formControlName="damage" />
+  </label>
+  @if (form.controls.damage.touched && form.controls.damage.hasError('min')) {
+    <p>Damage must be at least 1.</p>
+  }
+
+  <label>Rarity
+  <select formControlName="rarity">
+    <option>Rare</option>
+    <option>Epic</option>
+    <option>Legendary</option>
+  </select>
+  </label>
+  @if (form.controls.rarity.touched && form.controls.rarity.hasError('required')) {
+    <p>Rarity is required.</p>
+
+    <label>Class
+    <select formControlName="class">
+      <option>Melee</option>
+      <option>Ranged</option>
+    </select>
+    </label>
+
+    <label>
+      <input type="checkbox" formControlName="realItem" /> Real Item
+    </label>
+
+    <button type="submit" [disabled]="form.invalid">
+      {{ isEdit() ? 'Save Changes' : 'Add Weapon' }}
+    </button>
+
+  }
+</form>
+<a routerLink="/weapons">Bacl to list</a>
+

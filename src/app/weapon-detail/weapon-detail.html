@@ -4,7 +4,8 @@
   <p> Rarity: {{ w.rarity }}</p>
   <p> Class: {{ w.class }}</p>
   <p> Real Item: {{ w.realItem ? 'Yes' : 'No' }}</p>
-  <a routerLink="/weapons">Back to the list</a>
+  <a routerLink="['/weapons/edit',w.id]">Edit</a>
+  <a routerLink="/weapons">Back to the list </a>
 } @else {
   <p>Weapon Not Found.</p>
 }
