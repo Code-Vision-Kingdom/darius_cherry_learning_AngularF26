@@ -1,0 +1,10 @@
+@if (weapon(); as w) {
+  <h2>{{ w.name }}</h2>
+  <p> Damage: {{ w.damage }}</p>
+  <p> Rarity: {{ w.rarity }}</p>
+  <p> Class: {{ w.class }}</p>
+  <p> Real Item: {{ w.realItem ? 'Yes' : 'No' }}</p>
+  <a routerLink="/weapons">Back to the list</a>
+} @else {
+  <p>Weapon Not Found.</p>
+}

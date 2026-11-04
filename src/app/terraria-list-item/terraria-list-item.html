@@ -2,6 +2,7 @@
 <div class =  "item-borders">
 <h3 (click) = "toggle()"> {{item().name}}</h3>
 
+  <a [routerLink]="['/weapons', item().id]">View details</a>
   @if (expanded){
     <p>Damage: {{item().damage}}</p>
     <p>Class: {{item().class}}</p>

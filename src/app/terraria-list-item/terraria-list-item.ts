@@ -1,5 +1,6 @@
 import { Component, input, output } from '@angular/core';
 import { Weapon } from '../shared/models/assignment2';
+import { RouterLink } from '@angular/router';
 
 export interface WeaponEvent {
   id: number;
@@ -7,7 +8,7 @@ export interface WeaponEvent {
 }
 
 @Component({
-  imports: [],
+  imports: [RouterLink],
   selector: 'app-terraria-list-item',
   styleUrl: './terraria-list-item.scss',
   templateUrl: './terraria-list-item.html',

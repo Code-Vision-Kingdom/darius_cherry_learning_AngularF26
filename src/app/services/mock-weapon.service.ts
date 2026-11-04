@@ -31,6 +31,11 @@ export class MockWeaponService {
   removeWeapon(id: number) {
     this.items.update((list) => list.filter((item) => item.id !== id));
   }
+
+  getWeaponById(id: number) {
+    return this.items().find((w) => w.id === id);
+  }
+
   readonly meleeWeapons = computed(() => this.items().filter((weapon) => weapon.class === 'Melee'));
   readonly rangedWeapons = computed(() =>
     this.items().filter((weapon) => weapon.class === 'Ranged'),
